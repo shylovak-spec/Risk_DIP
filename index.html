@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Risk Assessment Journal</title>
+<title>Журнал оцінки ризиків</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,7 @@ button {
     border-radius: 10px;
 }
 
+/* --- ТИТУЛЬНА --- */
 #title-screen h1 {
     font-size: 32px;
     text-align: center;
@@ -51,6 +52,7 @@ button {
     color: #000;
 }
 
+/* --- КАРТКИ --- */
 #cards-screen {
     background: #fff;
     color: #000;
@@ -137,19 +139,19 @@ button {
 <body>
 
 <section id="title-screen">
-    <h1>Risk Assessment Journal for DIP Area</h1>
-    <button id="start-btn">Start</button>
+    <h1>Журнал оцінки ризиків для дільниці DIP</h1>
+    <button id="start-btn">Старт</button>
 </section>
 
 <section id="cards-screen">
     <h2 style="margin-bottom: 7px; text-align: center;">
-        Risk / Control<br>(click the card)
+        Ризик/Контроль<br>(тиць на картку)
     </h2>
 
     <div class="cards-grid" id="cards-container"></div>
 
     <a href="pingpong.html">
-        <button id="play-btn">Play?</button>
+        <button id="play-btn">Пограєм?</button>
     </a>
 </section>
 
@@ -166,59 +168,59 @@ startBtn.onclick = () => {
 
 const cardData = [
     {
-        title: "Mechanical Hazards",
-        front: "Cuts or puncture wounds from sharp component leads during manual assembly.",
-        back: "Training on preparation and soldering instructions. Daily workplace checks using LPA checklist."
+        title: "Механічні небезпеки",
+        front: "Порізи або проколи рук гострими виводами при ручному монтажі компонентів в отвори та їх подальшій формовці.",
+        back: "Комплексне навчання з Інструкцій та щоденні перевірки робочих місць за чек-листом LPA."
     },
     {
-        title: "Mechanical Hazards",
-        front: "Injury caused by sudden disconnection of compressed air hose. Particles getting into eyes.",
-        back: "Training and regular inspections of workplaces."
+        title: "Механічні небезпеки",
+        front: "Травмування через аварійне від’єднання шланга стисненого повітря та потрапляння часток в очі.",
+        back: "Навчання та регулярні перевірки робочих місць."
     },
     {
-        title: "Mechanical Hazards",
-        front: "Slipping or falling on wet floor after cleaning.",
-        back: "Use of warning signs and cleaning schedule compliance."
+        title: "Механічні небезпеки",
+        front: "Падіння, ковзання або спотикання на слизькій підлозі після вологого прибирання.",
+        back: "Використання попереджувальних табличок та дотримання графіка прибирання."
     },
     {
-        title: "Electrical Hazards",
-        front: "Electric shock due to equipment malfunction.",
-        back: "Regular electrical safety inspections and grounding checks."
+        title: "Електричні небезпеки",
+        front: "Ураження електричним струмом через несправність обладнання.",
+        back: "Перевірки електробезпеки, заземлення та навчання персоналу."
     },
     {
-        title: "Hazardous Substances",
-        front: "Skin and eye irritation when using cleaning chemicals.",
-        back: "Ventilation system and use of personal protective equipment."
+        title: "Небезпечні речовини",
+        front: "Подразнення шкіри та очей при роботі з хімічними речовинами.",
+        back: "Витяжна вентиляція та використання ЗІЗ."
     },
     {
-        title: "Fire / Explosion",
-        front: "Fire or explosion of chemical containers near heat sources.",
-        back: "Proper storage according to safety data sheets and availability of fire extinguishers."
+        title: "Пожежі/Вибухи",
+        front: "Займання або вибух хімічних речовин біля джерел тепла.",
+        back: "Правильне зберігання та наявність вогнегасників."
     },
     {
-        title: "Hot Surfaces",
-        front: "Burns from accidental contact with soldering station heating elements.",
-        back: "Warning signs and safety training."
+        title: "Гарячі поверхні",
+        front: "Термічні опіки при контакті з паяльним обладнанням.",
+        back: "Попереджувальні знаки та навчання персоналу."
     },
     {
-        title: "Noise",
-        front: "Exposure to excessive noise from equipment.",
-        back: "Workplace noise level monitoring."
+        title: "Шум",
+        front: "Вплив підвищеного шуму від обладнання.",
+        back: "Контроль рівня шуму та атестація робочих місць."
     },
     {
-        title: "Workplace Climate",
-        front: "Too high or too low temperature or humidity.",
-        back: "Monitoring of temperature and humidity."
+        title: "Клімат робочого місця",
+        front: "Некомфортна температура або вологість.",
+        back: "Контроль мікроклімату приміщення."
     },
     {
-        title: "Lighting",
-        front: "Eye strain due to insufficient or excessive lighting.",
-        back: "Use of adjustable local lighting."
+        title: "Освітлення",
+        front: "Підвищене навантаження на зір через погане освітлення.",
+        back: "Наявність місцевого регульованого освітлення."
     },
     {
-        title: "Ergonomics",
-        front: "Negative impact of prolonged sitting and computer work.",
-        back: "Work-rest schedule and regular medical examinations."
+        title: "Ергономіка",
+        front: "Негативний вплив тривалої сидячої роботи.",
+        back: "Режим праці та відпочинку, медогляди."
     }
 ];
 
@@ -237,7 +239,7 @@ cardData.forEach(c => {
                 <p>${c.front}</p>
             </div>
             <div class="card-face card-back">
-                <h3>Control Measures</h3>
+                <h3>Заходи контролю</h3>
                 <p>${c.back}</p>
             </div>
         </div>
