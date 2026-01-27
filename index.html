@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Журнал оцінки ризиків</title>
+<title>Risk Assessment Journal</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- ЗАГАЛЬНІ СТИЛІ --- */
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +40,6 @@ button {
     border-radius: 10px;
 }
 
-/* --- ТИТУЛЬНА СТОРІНКА --- */
 #title-screen h1 {
     font-size: 32px;
     text-align: center;
@@ -53,7 +51,6 @@ button {
     color: #000;
 }
 
-/* --- КАРТКИ --- */
 #cards-screen {
     background: #fff;
     color: #000;
@@ -140,19 +137,19 @@ button {
 <body>
 
 <section id="title-screen">
-    <h1>Журнал оцінки ризиків для дільниці DIP</h1>
-    <button id="start-btn">Старт</button>
+    <h1>Risk Assessment Journal for DIP Area</h1>
+    <button id="start-btn">Start</button>
 </section>
 
 <section id="cards-screen">
     <h2 style="margin-bottom: 7px; text-align: center;">
-        Ризик/Контроль<br>(тиць на картку)
+        Risk / Control<br>(click the card)
     </h2>
 
     <div class="cards-grid" id="cards-container"></div>
 
     <a href="pingpong.html">
-        <button id="play-btn">Пограєм?</button>
+        <button id="play-btn">Play?</button>
     </a>
 </section>
 
@@ -169,75 +166,60 @@ startBtn.onclick = () => {
 
 const cardData = [
     {
-        title: "Механічні небезпеки",
-        front: "Порізи або проколи рук гострими виводами при ручному монтажі компонентів в отвори та їх подальшій формовці.",
-        back: "Комплексне навчання з Інструкцій 'Підготовка комплектуючих до монтажу' та 'Загальні вимоги до ручної пайки'; навчання з ІОП №29; щоденні перевірки за чек-листом LPA."
+        title: "Mechanical Hazards",
+        front: "Cuts or puncture wounds from sharp component leads during manual assembly.",
+        back: "Training on preparation and soldering instructions. Daily workplace checks using LPA checklist."
     },
     {
-        title: "Механічні небезпеки",
-        front: "Травмування через аварійне від’єднання шланга стисненого повітря (AR-110). Потрапляння часток в очі у продувочній камері.",
-        back: "Навчання та щоденні перевірки робочих місць."
+        title: "Mechanical Hazards",
+        front: "Injury caused by sudden disconnection of compressed air hose. Particles getting into eyes.",
+        back: "Training and regular inspections of workplaces."
     },
     {
-        title: "Механічні небезпеки",
-        front: "Падіння, ковзання або спотикання на слизькій підлозі після вологого прибирання.",
-        back: "Використання попереджувальних табличок, дотримання графіка прибирання."
+        title: "Mechanical Hazards",
+        front: "Slipping or falling on wet floor after cleaning.",
+        back: "Use of warning signs and cleaning schedule compliance."
+    },
+    {
+        title: "Electrical Hazards",
+        front: "Electric shock due to equipment malfunction.",
+        back: "Regular electrical safety inspections and grounding checks."
+    },
+    {
+        title: "Hazardous Substances",
+        front: "Skin and eye irritation when using cleaning chemicals.",
+        back: "Ventilation system and use of personal protective equipment."
+    },
+    {
+        title: "Fire / Explosion",
+        front: "Fire or explosion of chemical containers near heat sources.",
+        back: "Proper storage according to safety data sheets and availability of fire extinguishers."
+    },
+    {
+        title: "Hot Surfaces",
+        front: "Burns from accidental contact with soldering station heating elements.",
+        back: "Warning signs and safety training."
+    },
+    {
+        title: "Noise",
+        front: "Exposure to excessive noise from equipment.",
+        back: "Workplace noise level monitoring."
+    },
+    {
+        title: "Workplace Climate",
+        front: "Too high or too low temperature or humidity.",
+        back: "Monitoring of temperature and humidity."
+    },
+    {
+        title: "Lighting",
+        front: "Eye strain due to insufficient or excessive lighting.",
+        back: "Use of adjustable local lighting."
+    },
+    {
+        title: "Ergonomics",
+        front: "Negative impact of prolonged sitting and computer work.",
+        back: "Work-rest schedule and regular medical examinations."
     }
-    { 
-        title: "Електричні небезпеки",
-        front:"Ураження електричним струмом через несправність систем захисту обладнання (паяльні станції, електровикрутки, обрізні машини).", 
-        back:"Комплексна перевірка електробезпеки та навчання: Навчання по І-98У, І-471У, І-31У; Періодичне навчання з ОП №29 для монтажника РЕА; Щорічне навчання з електробезпеки (Група II), перевірка заземлення, петлі 'фаза-ноль', занулення." 
-    }, 
-    { 
-        title: "Електричні небезпеки",
-        front:"Пробій електростатичним розрядом через несправність антистатичних браслетів або контуру захисного заземлення.", 
-        back:"Регулярні навчання за І-31У та і-14У; візуальний контроль стану антистатичних браслетів згідно з чек-листом." 
-    }, 
-    { 
-        title: "Небезпечні речовини",
-        front:"Хімічне подразнення шкіри (H315) та серйозне подразнення очей (H319) під час ручного видалення флюсу очисником Kontakt PCC.",
-        back:"Постійно працююча витяжна система. Наявність та контроль використання засобів індивідуального захисту."
-    }, 
-    { 
-        title: "Небезпечні речовини",
-        front:"Сонливість або запаморочення (H336) через вдихання парів очисника Kontakt PCC та ізопропілового спирту під час завантаження УЗ-мийки.",
-        back:"Постійно працююча витяжна система. Наявність та контроль використання засобів індивідуального захисту." 
-    },
-    { 
-        title: "Пожежі/Вибухи", 
-        front:"Займання (вибух) тари з хімречовинами при зберіганні біля нагрівачів або спалахування їх парів при потраплянні на гарячі поверхні.",
-        back:"Зберігання та використання хімічних речовин згідно з паспортом безпеки. Наявність первинних засобів пожежогасіння. Регулярні практичні навчання користування вогнегасниками."
-    }, 
-    {
-        title: "Гарячі/холодні носії",
-        front:"Термічні опіки шкіри в результаті випадкового контакту з нагрівальними елемантами паяльної станції.", 
-        back:"Періодичні навчання з ІОП №9 При виконанні монтажу радіоелектронної апаратури паяльником. Попереджувальні знаки на корпусі обладнання." 
-    }, 
-    { 
-        title: "Шум", 
-        front:"Експлуатація обладнання, що генерує надмірний шум.",
-        back:"Проведення атестації робочих місць, контроль шумового навантаження по запиту власними силами." 
-    },
-    { 
-        title: "Клімат робочого місця",
-        front:"Знижена чи підвищена температура, знижена чи підвищена вологість повітря, протяги.",
-        back:"Контроль температури та вологості. Облаштування проємів загороджувальними засобами."
-    }, 
-    { 
-        title: "Освітлення",
-        front:"Надмірне зорове навантаження через невідповідне освітлення: підвищена втомлюваність, мігрені, дискомфорт та зниження працездатності.",
-        back:"Регулярні медичні огляди. Наявність регульованого місцевого освітлення на кожному робочому місці." 
-    }, 
-    { 
-        title: "Ергономіка",
-        front:"Перекидання візків з платами під час руху та ризик юридичних штрафів через роботу з ліфтом персоналу без посвідчень ліфтера.",
-        back:"Щорічне навчання за професією «ліфтер» та контроль наявності діючих посвідчень. Щоденні візуальні перевірки візків згідно чек-листу."
-    }, 
-    { 
-        title: "Ергономіка",
-        front:"Негативний вплив тривалої сидячої роботи та роботи за ПК: зниження метаболізму, ризик розвитку хвороб серця, діабету та розладів опорно-рухового апарату.",
-        back:"Зміна видів діяльності для уникнення монотонних операцій протягом зміни. Режим відпочинку. Щорічний обов’язковий медичний огляд працівників." 
-    }, 
 ];
 
 const container = document.getElementById("cards-container");
@@ -255,7 +237,7 @@ cardData.forEach(c => {
                 <p>${c.front}</p>
             </div>
             <div class="card-face card-back">
-                <h3>Заходи контролю</h3>
+                <h3>Control Measures</h3>
                 <p>${c.back}</p>
             </div>
         </div>
